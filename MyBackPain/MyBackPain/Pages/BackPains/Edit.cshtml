@@ -1,0 +1,55 @@
+﻿@page "{id:int?}"
+@model MyBackPain.Pages.BackPains.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>BackPain</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BackPain.ID" />
+            <div class="form-group">
+                <label asp-for="BackPain.DoIHaveBackPain" class="control-label"></label>
+                <input asp-for="BackPain.DoIHaveBackPain" class="form-control" />
+                <span asp-validation-for="BackPain.DoIHaveBackPain" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BackPain.Day" class="control-label"></label>
+                <input asp-for="BackPain.Day" class="form-control" />
+                <span asp-validation-for="BackPain.Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BackPain.IsItMyFault" class="control-label"></label>
+                <input asp-for="BackPain.IsItMyFault" class="form-control" />
+                <span asp-validation-for="BackPain.IsItMyFault" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BackPain.DidITakeIbuprofen" class="control-label"></label>
+                <input asp-for="BackPain.DidITakeIbuprofen" class="form-control" />
+                <span asp-validation-for="BackPain.DidITakeIbuprofen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BackPain.DoIShakeMyFistsAtTheSky" class="control-label"></label>
+                <input asp-for="BackPain.DoIShakeMyFistsAtTheSky" class="form-control" />
+                <span asp-validation-for="BackPain.DoIShakeMyFistsAtTheSky" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
